@@ -36,7 +36,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  git: ^2.3.0 
   haveno: ^3.0.1
   socks5_proxy: ^1.0.6
   flutter_socks_proxy: ^0.0.3

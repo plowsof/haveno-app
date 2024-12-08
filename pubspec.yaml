@@ -92,10 +92,7 @@ dependencies:
   shared_preferences: ^2.3.2
   sqlite3_flutter_libs: ^0.5.24
   tray_manager: ^0.2.4
-  background_downloader:
-    git:
-      url: https://git.haveno.com/haveno/external/background_downloader.git
-      ref: V8.7.1
+  background_downloader: ^8.7.1
   #window_manager: ^0.4.2
 
 dev_dependencies:

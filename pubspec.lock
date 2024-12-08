@@ -44,12 +44,11 @@ packages:
   background_downloader:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "V8.7.1"
-      resolved-ref: "8d075cb528f3082904e02b8f1a7dcc336793742c"
-      url: "https://git.haveno.com/haveno/external/background_downloader.git"
-    source: git
-    version: "8.7.1"
+      name: background_downloader
+      sha256: "7c65a999544b40668000aac6379854b890f0ef367b9fbd29d959fd1e242dda14"
+      url: "https://pub.dev"
+    source: hosted
+    version: "8.8.0"
   badges:
     dependency: "direct main"
     description:
@@ -109,12 +108,11 @@ packages:
   chatview:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "2.1.1"
-      resolved-ref: c9ad0d705f3db743cc10452ae316aeee2fd810d0
-      url: "https://git.haveno.com/haveno/external/flutter_chatview.git"
-    source: git
-    version: "2.1.1"
+      name: chatview
+      sha256: "8817ecf230e6bfdf3f3f5ad94dc97743ee23f4e5c9eeb2da8e76fbc739ebf394"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.0"
   checked_yaml:
     dependency: transitive
     description:
@@ -387,11 +385,10 @@ packages:
   flutter_socks_proxy:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "0.0.3"
-      resolved-ref: "7a1a6fe2f4a0c82eb7d7de3059e11f79f57a153c"
-      url: "https://git.haveno.com/haveno/external/socks_proxy.git"
-    source: git
+      name: flutter_socks_proxy
+      sha256: "5603ad90c2849d2e6f2b4ed3d337653b3a6c8fb471f535e3715254913a9206ce"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.3"
   flutter_svg:
     dependency: transitive
@@ -419,6 +416,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "10.8.0"
+  git:
+    dependency: "direct main"
+    description:
+      name: git
+      sha256: daea03e7471607e7ed942bccd4814cfc7e4fa8ca5d3dd6ad4fb170e44423d1a0
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -566,11 +571,10 @@ packages:
   interactive_chart:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "v0.3.5"
-      resolved-ref: "8de04325796c702746901d5341d56d65c6959b86"
-      url: "https://git.haveno.com/haveno/external/flutter-interactive-chart.git"
-    source: git
+      name: interactive_chart
+      sha256: "6237d938e57205034b6f3e96158954d876bf86467d76495d93ef393c883753b8"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.3.5"
   internet_connection_checker_plus:
     dependency: "direct main"
@@ -687,12 +691,11 @@ packages:
   mobile_scanner:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "v5.1.1"
-      resolved-ref: c2c98489fd43cd73b2080ba1f570d0c3eb9b9624
-      url: "http://git.haveno.com/haveno/external/mobile_scanner.git"
-    source: git
-    version: "5.1.1"
+      name: mobile_scanner
+      sha256: d234581c090526676fd8fab4ada92f35c6746e3fb4f05a399665d75a399fb760
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.2.3"
   multi_select_flutter:
     dependency: "direct main"
     description:

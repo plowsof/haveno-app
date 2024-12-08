@@ -62,6 +62,12 @@ android {
     }
 }
 
+configurations {
+    all {
+        exclude group: 'com.google.android.play', module: 'play-core'
+    }
+}
+
 flutter {
     source = "../.."
 }

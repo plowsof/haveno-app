@@ -70,10 +70,7 @@ dependencies:
     git:
       url: https://git.haveno.com/haveno/external/flutter-interactive-chart.git
       ref: v0.3.5
-  chatview:
-    git:
-      url: https://git.haveno.com/haveno/external/flutter_chatview.git
-      ref: 2.1.1
+  chatview: 2.1.1
   #local_auth: ^2.3.0 ## To do faceid etc
   package_info_plus: ^8.0.2
   #workmanager: ^0.5.2  ## Probably needed for ios to check for messafes every 15 mins

@@ -1,0 +1,153 @@
+// Haveno App extends the features of Haveno, supporting mobile devices and more.
+// Copyright (C) 2024 Kewbit (https://kewbit.org)
+// Source Code: https://git.haveno.com/haveno/haveno-app.git
+//
+// Author: Kewbit
+//    Website: https://kewbit.org
+//    Contact Email: me@kewbit.org
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+import 'package:flutter/material.dart';
+import 'package:multi_select_flutter/multi_select_flutter.dart';
+
+class OfferFilterMenu extends StatefulWidget {
+  final ValueChanged<List<String?>>? onCurrenciesChanged;
+  final ValueChanged<List<String?>>? onPaymentMethodsChanged;
+
+  const OfferFilterMenu({
+    Key? key,
+    this.onCurrenciesChanged,
+    this.onPaymentMethodsChanged,
+  }) : super(key: key);
+
+  @override
+  _OfferFilterMenuState createState() => _OfferFilterMenuState();
+}
+
+class _OfferFilterMenuState extends State<OfferFilterMenu> {
+  final Map<String, List<String?>> _selectedCurrencies = {};
+  final Map<String, List<String?>> _selectedPaymentMethods = {};
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Theme.of(context).cardTheme.color,
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Filters',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          _buildMultiSelectField(
+            'Currencies',
+            ['USD', 'EUR', 'GBP', 'AUD', 'CAD', 'JPY'],
+            _selectedCurrencies,
+            (values) {
+              widget.onCurrenciesChanged?.call(values);
+            },
+          ),
+          const SizedBox(height: 8),
+          _buildMultiSelectField(
+            'Payment Methods',
+            ['PayPal', 'Revolut', 'Zelle', 'Venmo'],
+            _selectedPaymentMethods,
+            (values) {
+              widget.onPaymentMethodsChanged?.call(values);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+Widget _buildMultiSelectField(
+    String label,
+    List<String> items,
+    Map<String, List<String?>> selectedValues,
+    ValueChanged<List<String?>> onConfirm) {
+  return MultiSelectBottomSheetField<String?>(
+    separateSelectedItems: true,
+    initialChildSize: 0.4,
+    listType: MultiSelectListType.LIST,
+    searchable: true,
+    searchHint: 'Search by $label...',
+    buttonText: Text(label, style: const TextStyle(fontSize: 16, color: Colors.white, height: 0.16)),
+    title: Padding(
+      padding: const EdgeInsets.only(left: 16.0),
+      child: Text(
+        label,
+        style: const TextStyle(fontSize: 16, color: Colors.white),
+      ),
+    ),
+    items: items.map((item) => MultiSelectItem<String?>(item, item)).toList(),
+    onConfirm: (values) {
+      setState(() {
+        selectedValues[label] = values;
+      });
+      onConfirm(values);
+    },
+    validator: (values) {
+      if (values == null || values.isEmpty) {
+        return 'Please select $label';
+      }
+      return null;
+    },
+    chipDisplay: MultiSelectChipDisplay(
+      textStyle: const TextStyle(color: Colors.white),
+      chipColor: Theme.of(context).colorScheme.secondary.withOpacity(0.23),
+      onTap: (item) {
+        setState(() {
+          selectedValues[label]?.remove(item);
+        });
+      },
+      alignment: Alignment.bottomCenter,
+      height: 24,
+      decoration: BoxDecoration(),
+    ),
+    decoration: BoxDecoration(
+      color: Theme.of(context).inputDecorationTheme.fillColor,
+      border: Border.all(color: Theme.of(context).inputDecorationTheme.border?.borderSide.color ?? Colors.grey),
+      borderRadius: BorderRadius.circular(4),
+    ),
+    buttonIcon: Icon(
+      Icons.arrow_drop_down,
+      color: Theme.of(context).inputDecorationTheme.iconColor ?? Colors.grey,
+    ),
+    itemsTextStyle: const TextStyle(
+      fontSize: 16,
+      color: Colors.white,
+    ),
+    selectedItemsTextStyle: const TextStyle(
+      fontSize: 16,
+      color: Colors.white,
+    ),
+    barrierColor: Colors.black.withOpacity(0.5),
+    confirmText: Text(
+      'OK',
+      style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+    ),
+    cancelText: Text(
+      'CANCEL',
+      style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+    ),
+  );
+}
+
+
+}

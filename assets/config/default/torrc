@@ -1,0 +1,22 @@
+DataDirectory ./data
+HiddenServiceDir ../daemon_service
+HiddenServicePort 80 127.0.0.1:3201
+HTTPTunnelPort 8888
+SocksPort 9066
+ControlPort 9077
+HashedControlPassword 16:7FD95C8D50BA159760AA90C98DEA2924F0539C6B939F8A07AA68265FF4
+Log notice stdout
+#Log notice file ./logs/notice.log
+KeepalivePeriod 60
+ConstrainedSockets 1
+ConstrainedSockSize 8192
+#GeoIPFile ./lib/geoip
+#GeoIPv6File ./lib/geoip6
+ClientDNSRejectInternalAddresses 1
+Nickname HAx000000
+ContactInfo uuidv4@something.com
+UseEntryGuards 1
+NumEntryGuards 3
+
+### EXPERIMENTAL FUTURE STUFF DONT ENABLE THESE YET IT COULD BE DISASTEROUS
+#HiddenServiceSingleHopMode 1

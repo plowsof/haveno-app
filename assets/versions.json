@@ -1,0 +1,17 @@
+{
+    "haveno-core": {
+        "default": ""
+    },
+    "tor": {
+        "default": "14.5a1",
+        "otherwise_default_model": "tor_find_latest"
+    },
+    "monero": {
+        "default": "0.18.3.4",
+        "otherwise_default_model": ""
+    },
+    "java": {
+        "default": "21.0.4+7",
+        "otherwise_default_model": ""
+    }
+}

@@ -39,10 +39,7 @@ dependencies:
 
   haveno: ^3.0.1
   socks5_proxy: ^1.0.6
-  flutter_socks_proxy:
-    git:
-      url: https://git.haveno.com/haveno/external/socks_proxy.git
-      ref: 0.0.3
+  flutter_socks_proxy: ^0.0.3
   provider: ^6.0.0
   path_provider: ^2.1.4
   multi_select_flutter: ^4.1.3
@@ -58,19 +55,14 @@ dependencies:
   http2: ^2.3.0
   flutter_launcher_icons: ^0.13.1
   qr_flutter: ^4.1.0
-  mobile_scanner:
-    git:
-      url: http://git.haveno.com/haveno/external/mobile_scanner.git
-      ref: v5.1.1
+  mobile_scanner: ^5.1.1
   url_launcher: ^6.3.0
   archive: ^3.6.1
   connectivity_plus: ^6.0.5
   internet_connection_checker_plus: ^2.5.1
   interactive_chart:
-    git:
-      url: https://git.haveno.com/haveno/external/flutter-interactive-chart.git
-      ref: v0.3.5
-  chatview: 2.1.1
+  git: ^0.3.5
+  chatview: ^2.1.1
   #local_auth: ^2.3.0 ## To do faceid etc
   package_info_plus: ^8.0.2
   #workmanager: ^0.5.2  ## Probably needed for ios to check for messafes every 15 mins
